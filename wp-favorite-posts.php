@@ -158,7 +158,7 @@ function wpfp_link( $return = 0, $action = "", $show_span = 1, $args = array() )
 }
 
 function wpfp_link_html($post_id, $opt, $action) {
-    $link = "<a class='wpfp-link' href='?wpfpaction=".$action."&amp;postid=". $post_id . "' title='". $opt ."' rel='nofollow'>". $opt ."</a>";
+    $link = "<a class='wpfp-link ".$action."' href='?wpfpaction=".$action."&amp;postid=". $post_id . "' title='". $opt ."' rel='nofollow'>". $opt ."</a>";
     $link = apply_filters( 'wpfp_link_html', $link );
     return $link;
 }
@@ -311,16 +311,16 @@ add_action('wp_print_styles', 'wpfp_wp_print_styles');
 
 function wpfp_init() {
     $wpfp_options = array();
-    $wpfp_options['add_favorite'] = "Add to favorites";
-    $wpfp_options['added'] = "Added to favorites!";
-    $wpfp_options['remove_favorite'] = "Remove from favorites";
-    $wpfp_options['removed'] = "Removed from favorites!";
+    $wpfp_options['add_favorite'] = "Mark this lessons as completed.";
+    $wpfp_options['added'] = "Completed!";
+    $wpfp_options['remove_favorite'] = "You have completed this lesson.";
+    $wpfp_options['removed'] = "This lesson has been marked not completed.";
     $wpfp_options['clear'] = "Clear favorites";
     $wpfp_options['cleared'] = "<p>Favorites cleared!</p>";
     $wpfp_options['favorites_empty'] = "Favorite list is empty.";
     $wpfp_options['cookie_warning'] = "Your favorite posts saved to your browsers cookies. If you clear cookies also favorite posts will be deleted.";
     $wpfp_options['rem'] = "remove";
-    $wpfp_options['text_only_registered'] = "Only registered users can favorite!";
+    $wpfp_options['text_only_registered'] = "Only registered users can mark lessons completed.";
     $wpfp_options['statics'] = 1;
     $wpfp_options['widget_title'] = '';
     $wpfp_options['widget_limit'] = 5;
